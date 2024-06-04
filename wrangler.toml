@@ -1,0 +1,36 @@
+name = "worker_name"
+main = "src/index.ts"
+compatibility_date = "2024-05-29"
+node_compat = true
+workers_dev = true
+account_id = "your_CF_account_id" 
+vars = { ENV_TYPE = "dev" }
+
+[[r2_buckets]]
+binding = 'BUCKET'
+bucket_name = "your_R2_bucket_name"
+
+# db for local development & dev
+[[ d1_databases ]]
+binding = "DB"
+database_name = "your_DB_name_for_dev"
+database_id = "your_DB_id_for_dev"
+migrations_dir = "drizzle"
+
+[env.stage]
+vars = { ENV_TYPE = "stage" }
+d1_databases = [
+    { binding = "DB", database_name = "your_DB_name_for_stage", database_id = "your_DB_id", migrations_dir = "drizzle" },
+]
+r2_buckets = [
+    { binding = "BUCKET", bucket_name = "your_R2_bucket_name"},
+]
+
+[env.prod]
+vars = { ENV_TYPE = "prod" }
+d1_databases = [
+    { binding = "DB", database_name = "your_DB_name_for_prod", database_id = "your_DB_id", migrations_dir = "drizzle" },
+]
+r2_buckets = [
+    { binding = "BUCKET", bucket_name = "your_R2_bucket_name"},
+]

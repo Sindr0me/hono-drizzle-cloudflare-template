@@ -1,0 +1,39 @@
+{
+	"dependencies": {
+		"@cloudflare/workers-types": "^4.20240603.0",
+		"drizzle-orm": "^0.31.1",
+		"hono": "^4.4.3",
+		"wrangler": "^3.58.0"
+	},
+	"name": "hono-drizzle-cloudflare-template",
+	"version": "1.0.0",
+	"description": "hono-drizzle-cloudflare-template",
+	"main": "index.ts",
+	"devDependencies": {
+		"drizzle-kit": "^0.22.2"
+	},
+	"scripts": {
+		"dev": "wrangler dev src/index.ts",
+		"generate": "drizzle-kit generate",
+		"drizzle:up": "drizzle-kit up",
+		"amend": "drizzle-kit drop && drizzle-kit generate",
+		"studio": "drizzle-kit studio"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Sindr0me/hono-drizzle-cloudflare-template.git"
+	},
+	"keywords": [
+		"hono",
+		"frizzle",
+		"cloudflare",
+		"R2",
+		"D1"
+	],
+	"author": "sindr0me",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Sindr0me/hono-drizzle-cloudflare-template/issues"
+	},
+	"homepage": "https://github.com/Sindr0me/hono-drizzle-cloudflare-template#readme"
+}
